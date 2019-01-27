@@ -7,7 +7,7 @@ public interface IInteractive
 	void OnInteract();	
 }
 
-public class BaseInteractive : MonoBehaviour, IInteractive
+public class BaseInteractive : IInteractive
 {
 	public void OnInteract()
 	{

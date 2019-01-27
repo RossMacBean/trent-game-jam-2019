@@ -113,10 +113,9 @@ GameObject:
   - component: {fileID: 7289220883126544903}
   - component: {fileID: 7289220883126544902}
   - component: {fileID: 7289220883126544904}
-  - component: {fileID: 1562231136}
   m_Layer: 0
   m_Name: PlayerCharacter
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,11 +228,3 @@ MonoBehaviour:
   sneakModifier: 0.5
   HookshotClass: {fileID: 7174313921134680401, guid: ac92290afbed2474cb8a9b61e4748e17,
     type: 3}
---- !u!81 &1562231136
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7289220883126544896}
-  m_Enabled: 1
