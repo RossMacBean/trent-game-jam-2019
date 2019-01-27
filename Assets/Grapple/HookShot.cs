@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(SphereCollider), typeof(CableComponent))]
+[RequireComponent(typeof(SphereCollider), typeof(CableComponent), typeof(AudioSource))]
 public class HookShot : MonoBehaviour
 {
 	[SerializeField] float LaunchSpeed = 5;
 	[SerializeField] float PullSpeed = 5;
 	[SerializeField] float MaxCableLength = 10;
+	[SerializeField] string[] CollisionIgnoreTags;
+	[SerializeField] AudioClip ThrowSound = null;
+	[SerializeField] AudioClip HookSound = null;
 
 	bool mIsLatched = false;
 	bool mReel = false;
@@ -22,6 +25,7 @@ public class HookShot : MonoBehaviour
 	SphereCollider mSphere;
 	CapsuleCollider mPlayerCapsule;
 	Rigidbody mHookRigidbody;
+	AudioSource mAudioSource;
 
 	public bool IsLatched => mIsLatched;
 	public bool IsReeling => mReel;
@@ -35,6 +39,10 @@ public class HookShot : MonoBehaviour
 
 		mHookRigidbody = FindObjectOfType<Rigidbody>();
 		mHookRigidbody.isKinematic = true;
+
+		mAudioSource = FindObjectOfType<AudioSource>();
+
+		gameObject.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -78,9 +86,10 @@ public class HookShot : MonoBehaviour
 	{
 		gameObject.SetActive(true);
 
-		//gameObject.SetActive(true);
 		transform.position = startLocation;
 		Velocity = Direction * LaunchSpeed;
+
+		mAudioSource.PlayOneShot(ThrowSound);
 	}
 
 	public void ForceReel()
@@ -102,6 +111,9 @@ public class HookShot : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
+		if (other.tag == "NoGrapple")
+			return;
+
 		if (!IsReeling && other != mPlayerCapsule)
 		{
 			Physics.IgnoreCollision(mSphere, mPlayerCapsule, false);
@@ -111,6 +123,8 @@ public class HookShot : MonoBehaviour
 
 			mIsLatched = true;
 			mReel = false;
+
+			mAudioSource.PlayOneShot(HookSound);
 		}
 
 		if (other == mPlayerCapsule)
