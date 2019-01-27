@@ -36,6 +36,10 @@ public class InputManager : MonoBehaviour
 	bool mLeftMouseButtonDown = false;
 	bool mRightMouseButtonDown = false;
 
+	static bool bPaused = false;
+
+	public static bool IsPaused() { return bPaused; }
+
 	#region Property Accessors 
 	public static InputManager Singleton
 	{
@@ -66,11 +70,14 @@ public class InputManager : MonoBehaviour
 
 	void Update()
 	{
-		// Mouse events
-		CheckMouseEvents();
-		CheckKeyboardEvents();
-		CheckButtonEvents();
-		DistributeAxisEvents();
+		if (!bPaused)
+		{
+			// Mouse event
+			CheckMouseEvents();
+			CheckKeyboardEvents();
+			CheckButtonEvents();
+			DistributeAxisEvents();
+		}
 	}
 
 	void CheckMouseEvents()
@@ -154,6 +161,18 @@ public class InputManager : MonoBehaviour
 			AxisValues[Pair.Key] = Input.GetAxis(Pair.Key);
 			Pair.Value(AxisValues[Pair.Key]);
 		}
+	}
+
+	public void PauseGame()
+	{
+		bPaused = true;
+		FungusTrigger.PauseEverything_s();
+	}
+
+	public void UnpauseGame()
+	{
+		bPaused = false;
+		FungusTrigger.UnpauseEverything_s();
 	}
 
 	#region Register and Unregister input events

@@ -158,6 +158,10 @@ public class FungusTrigger : MonoBehaviour, IInteractive
 	public static void PauseEverything_s()
 	{
 		if (IsStopped()) return;
+
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
+
 		bodies_s = GameObject.FindObjectsOfType<Rigidbody>();
 		snapshot_s = new Freeze[bodies_s.Length];
 		for (int i = 0; i < bodies_s.Length; ++i)
@@ -165,8 +169,25 @@ public class FungusTrigger : MonoBehaviour, IInteractive
 			snapshot_s[i] = new Freeze(bodies_s[i]);
 		}
 		// disable all active components on CharacterControllers
+		RigidBodyPlayerController[] playerControllers = GameObject.FindObjectsOfType<RigidBodyPlayerController>();
 		CharacterController[] charControllers_s = GameObject.FindObjectsOfType<CharacterController>();
 		temporarilyDisabled_s = new List<MonoBehaviour>();
+		for (int i = 0; i < charControllers_s.Length; ++i)
+		{
+			if (charControllers_s[i].enabled)
+			{
+				MonoBehaviour[] list = charControllers_s[i].GetComponents<MonoBehaviour>();
+				for (int c = 0; c < list.Length; ++c)
+				{
+					if (list[c].enabled)
+					{
+						list[c].enabled = false;
+						temporarilyDisabled_s.Add(list[c]);
+					}
+				}
+			}
+		}
+
 		for (int i = 0; i < charControllers_s.Length; ++i)
 		{
 			if (charControllers_s[i].enabled)
@@ -187,6 +208,10 @@ public class FungusTrigger : MonoBehaviour, IInteractive
 	public static void UnpauseEverything_s()
 	{
 		if (!IsStopped()) return;
+
+		Cursor.visible = false;
+		Cursor.lockState = CursorLockMode.Locked;
+
 		for (int i = 0; i < bodies_s.Length; ++i)
 		{
 			if (bodies_s[i] != null)
