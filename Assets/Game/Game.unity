@@ -408,6 +408,78 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 0}
   useEventSystem: 0
+--- !u!135 &532613278
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532613276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &532613279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532613276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3333585915bdc4845ad81715240bf811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnInteract: 1
+  broadcast:
+  - messageToSend: keys
+  setVariable: []
+  addToVariable: []
+  tagsThatCanTrigger:
+  - Player
+  onlyTriggerOnce: 1
+--- !u!1 &708522747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 882cce1c834c3934ab0b1a9071b23b94,
+    type: 3}
+  m_PrefabInstance: {fileID: 391117487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &708522749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708522747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3333585915bdc4845ad81715240bf811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnInteract: 1
+  broadcast:
+  - messageToSend: teddy bear
+  setVariable: []
+  addToVariable: []
+  tagsThatCanTrigger:
+  - Player
+  onlyTriggerOnce: 1
+--- !u!135 &708522751
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708522747}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.146
+  m_Center: {x: 0, y: 0.13929999, z: 0.0145}
 --- !u!1 &752301887
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,8 +497,8 @@ GameObject:
   - component: {fileID: 752301897}
   - component: {fileID: 752301895}
   - component: {fileID: 752301892}
-  - component: {fileID: 752301896}
   - component: {fileID: 752301893}
+  - component: {fileID: 752301896}
   m_Layer: 0
   m_Name: Dog collar clue
   m_TagString: Untagged
@@ -460,7 +532,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 752301889}
+  - {fileID: 752301897}
   selectedCommands: []
   variables: []
   description: 
@@ -490,7 +562,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 31
     y: 51
-    width: 133
+    width: 130
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -648,12 +720,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 752301887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 752301889}
-  keyPressType: 0
-  keyCode: 101
+  message: dog collar
 --- !u!114 &752301897
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -670,7 +741,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 191.55789
     y: 51.804832
-    width: 134
+    width: 131.6
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -701,6 +772,39 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 0}
   useEventSystem: 0
+--- !u!135 &866751455
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866751453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &866751456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866751453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3333585915bdc4845ad81715240bf811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnInteract: 1
+  broadcast:
+  - messageToSend: dog collar
+  setVariable: []
+  addToVariable: []
+  tagsThatCanTrigger:
+  - Player
+  onlyTriggerOnce: 1
 --- !u!1 &881493000
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +828,8 @@ GameObject:
   - component: {fileID: 881493007}
   - component: {fileID: 881493009}
   - component: {fileID: 881493010}
-  - component: {fileID: 881493016}
   - component: {fileID: 881493013}
+  - component: {fileID: 881493016}
   m_Layer: 0
   m_Name: Car key clue
   m_TagString: Untagged
@@ -759,7 +863,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 881493004}
+  - {fileID: 881493002}
   selectedCommands: []
   variables: []
   description: 
@@ -839,7 +943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 21
+    x: 22.176472
     y: 129
     width: 120
     height: 40
@@ -966,7 +1070,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 151
     y: 161
-    width: 140.58827
+    width: 142.23534
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1069,12 +1173,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 881493000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a98f5f89242e80d42865cdf1912beda3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 881493002}
-  tagFilter: []
-  FireOn: 1
+  message: paper
 --- !u!114 &881493014
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1138,12 +1241,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 881493000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 881493011}
-  keyPressType: 0
-  keyCode: 101
+  message: keys
 --- !u!1 &1033177227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,8 +1460,8 @@ GameObject:
   - component: {fileID: 1043080806}
   - component: {fileID: 1043080809}
   - component: {fileID: 1043080803}
-  - component: {fileID: 1043080810}
   - component: {fileID: 1043080807}
+  - component: {fileID: 1043080810}
   m_Layer: 0
   m_Name: duck clue
   m_TagString: Untagged
@@ -1420,8 +1522,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 41
-    y: 51
+    x: 42
+    y: 55
     width: 120
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1606,12 +1708,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043080800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1043080802}
-  keyPressType: 0
-  keyCode: 101
+  message: duck clue
 --- !u!1 &1174608721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1663,7 +1764,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1174608727}
   selectedCommands: []
   variables: []
   description: 
@@ -1685,12 +1787,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174608721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 000864f8e9e1748a39807861d0e60e29, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d7d417659cd54a6787f70f763950c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentBlock: {fileID: 1174608733}
-  keyPressType: 0
-  keyCode: 101
+  message: teddy bear
 --- !u!114 &1174608724
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1762,7 +1863,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 37
     y: 107
-    width: 136
+    width: 134
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1789,7 +1890,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 43
     y: 50
-    width: 125
+    width: 122.8
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1936,7 +2037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 881493001}
+  selectedFlowchart: {fileID: 1043080801}
 --- !u!4 &1366724943
 Transform:
   m_ObjectHideFlags: 1
@@ -2464,6 +2565,45 @@ MonoBehaviour:
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1537951814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: e2b10aa11b8c333419bdafbcb24a4d8d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1853730229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537951815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537951814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3333585915bdc4845ad81715240bf811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnInteract: 1
+  broadcast:
+  - messageToSend: paper
+  setVariable: []
+  addToVariable: []
+  tagsThatCanTrigger:
+  - Player
+  onlyTriggerOnce: 1
+--- !u!135 &1537951816
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537951814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1567632420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2689,11 +2829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3b73bcb6e531b48a614ea98dd489af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3b73bcb6e531b48a614ea98dd489af, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ad3b73bcb6e531b48a614ea98dd489af, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2738,6 +2878,39 @@ MonoBehaviour:
   clickEnabled: 1
   hoverCursor: {fileID: 0}
   useEventSystem: 1
+--- !u!135 &1673827680
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673827678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1673827681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673827678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3333585915bdc4845ad81715240bf811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerOnInteract: 1
+  broadcast:
+  - messageToSend: duck clue
+  setVariable: []
+  addToVariable: []
+  tagsThatCanTrigger:
+  - Player
+  onlyTriggerOnce: 1
 --- !u!1 &1779063437
 GameObject:
   m_ObjectHideFlags: 0
