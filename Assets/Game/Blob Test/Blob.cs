@@ -18,11 +18,13 @@ public class Blob : MonoBehaviour
         UpdateDestination();
     }
 
+	public float ArrivedDelta = 0.2f;
+
     public void Update()
     {
         PlayerVisible = CanSeePlayer();
 
-        if (Vector3.Distance(transform.position, _currentDestination) <= 0.2f) 
+        if (Vector3.Distance(transform.position, _currentDestination) <= ArrivedDelta) 
         {
             // Arrived
             UpdateDestination();
