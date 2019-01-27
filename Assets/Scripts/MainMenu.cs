@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public Animator transitionAnim;
+	public string gameLayerScene, levelScene;
     private Button startButton, creditsButton, creditsBackButton;
     private RectTransform mainMenuPanel, creditsPanel;
 
@@ -46,6 +47,11 @@ public class MainMenu : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("Game");
-    }
+		SceneManager.LoadScene(levelScene);
+
+		if (!string.IsNullOrWhiteSpace(gameLayerScene))
+		{
+			SceneManager.LoadScene(gameLayerScene, LoadSceneMode.Additive);
+		}
+	}
 }
