@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class FungusTrigger : MonoBehaviour, IInteractive
 {
 	[SerializeField] bool TriggerOnInteract = false;
+	[SerializeField] AudioClip mTriggerSound;
+	private AudioSource mAudioSource = null;
 
 	[System.Serializable]
 	public class Broadcast
@@ -86,6 +88,13 @@ public class FungusTrigger : MonoBehaviour, IInteractive
 	/// <summary>Trigger this instance</summary>
 	public void Trigger()
 	{
+		mAudioSource = FindObjectOfType<AudioSource>();
+		if (mAudioSource != null)
+		{
+			Debug.Log("BANG");
+			mAudioSource.PlayOneShot(mTriggerSound);
+		}
+
 		if (this.enabled)
 		{
 			if (setVariable != null) { System.Array.ForEach(setVariable, (i) => { i.Trigger(); }); }
