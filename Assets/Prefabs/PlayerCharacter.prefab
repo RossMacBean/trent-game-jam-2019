@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 7289220883126544903}
   - component: {fileID: 7289220883126544902}
   - component: {fileID: 7289220883126544904}
+  - component: {fileID: 3660786494388089747}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -228,3 +229,18 @@ MonoBehaviour:
   sneakModifier: 0.5
   HookshotClass: {fileID: 7174313921134680401, guid: ac92290afbed2474cb8a9b61e4748e17,
     type: 3}
+--- !u!114 &3660786494388089747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289220883126544896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b72c5f80faf3e84d82249c28abc1938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxInteractDistance: 2.5
+  InteractRadius: 1.19
+  DrawDebug: 1
