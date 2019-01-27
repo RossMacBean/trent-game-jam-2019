@@ -22,7 +22,7 @@ public class Blob : MonoBehaviour
     {
         PlayerVisible = CanSeePlayer();
 
-        if (Vector3.Distance(transform.position, _currentDestination) <= 0.2f) 
+        if (Vector3.Distance(transform.position, CurrentDestination) <= 0.2f) 
         {
             // Arrived
             UpdateDestination();
@@ -52,7 +52,18 @@ public class Blob : MonoBehaviour
 
     private int _pointIndex = -1;
     private int _pointIncrement = 1;
+
     private Vector3 _currentDestination;
+    protected Vector3 CurrentDestination 
+    {
+        get { return _currentDestination;}
+        set
+        {
+            if (_currentDestination == value) return;
+            _currentDestination = value;
+            _agent.SetDestination(value);
+        }        
+    }
 
     private void UpdateDestination()
     {
@@ -62,10 +73,8 @@ public class Blob : MonoBehaviour
             _pointIncrement *= -1;
             _pointIndex += 2 * _pointIncrement;
         }
-        _currentDestination = Points[_pointIndex].position;
-        _agent.SetDestination(_currentDestination);
+        CurrentDestination = Points[_pointIndex].position;  
     }
-
 
     private PlayerTest _playerInCollider;
     private PlayerTest _lastVisiblePlayer;
@@ -121,6 +130,25 @@ public class Blob : MonoBehaviour
         return (dest - src).normalized;
     }
 
+    public void GoToClosestPoint(Vector3 position)
+    {
+        if (Points.Length == 0) return;
+
+        Transform destinationPoint = null;
+        var minDistance = Mathf.Infinity;
+        foreach (var point in Points)
+        {
+            var distance = Vector3.Distance(point.position, position);
+            if (distance < minDistance) {
+                minDistance = distance;
+                destinationPoint = point;
+            }
+        }
+        CurrentDestination = destinationPoint.position;
+        // After arriving at this destination the Blob will continue patrolling from the next
+        // point through UpdateDestination
+    }
+
     #if GAME_DEBUG
     public string DebugText; // A bit of a cheat, but this is a game jam
 
@@ -142,7 +170,7 @@ public class Blob : MonoBehaviour
             Gizmos.matrix = transform.localToWorldMatrix;
             Gizmos.DrawWireCube(_debugBoxCollider.center, _debugBoxCollider.size);   
         }      
-    }  
+    }
     #endif 
 
 }
