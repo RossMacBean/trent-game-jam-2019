@@ -62,7 +62,7 @@ public class FirstPersonCamera : MonoBehaviour
 
     void FixedUpdate()
     {
-        UpdateCamera();
+		UpdateCamera();
     }
 
     public void Rotate(float x, float y)

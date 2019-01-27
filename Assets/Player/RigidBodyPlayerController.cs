@@ -44,16 +44,19 @@ public class RigidBodyPlayerController : MonoBehaviour
 	}
 
 	void FixedUpdate()
-    {
+    {	
 		mRigidBody.angularVelocity = Vector3.zero;
 
-        UpdateState();
-        GetInput();
-        ApplyForces();
-    }
+		UpdateState();
+		GetInput();
+		ApplyForces();
+	}
 
     void ApplyForces()
     {
+		if (InputManager.IsPaused())
+			return;
+
 		Vector3 velocity = GetVelocity();
 		
 		mRigidBody.MoveRotation(mRigidBody.rotation * Quaternion.Euler(rotation));
