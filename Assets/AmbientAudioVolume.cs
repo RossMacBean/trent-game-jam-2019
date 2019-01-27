@@ -20,7 +20,7 @@ public class AmbientAudioVolume : MonoBehaviour
 		mVolume = FindObjectOfType<BoxCollider>();
 		mVolume.isTrigger = true;
 		
-		AmbientSounds = FindObjectsOfType<AudioSource>();
+		AmbientSounds = gameObject.GetComponents<AudioSource>();
 
 		for (int i = 0; i < AmbientSounds.Length; ++i)
 		{
