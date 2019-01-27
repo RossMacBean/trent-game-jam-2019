@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Game/GameLayer.unity
     guid: 4c8d811b5ae660a4c9235e1bc77b4dbc
   - enabled: 1
-    path: Assets/Game/Game.unity
-    guid: a7908193ac895af4788acd7b73766d37
-  - enabled: 1
     path: Assets/Game/MainLevel.unity
     guid: d846f16dbfc71574abb38ca366d66043
+  - enabled: 1
+    path: Assets/Game/GameOver.unity
+    guid: dfe12400d18c0a345a52b1976e49a180
   m_configObjects: {}

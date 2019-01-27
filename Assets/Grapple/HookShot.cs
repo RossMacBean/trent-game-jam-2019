@@ -9,6 +9,7 @@ public class HookShot : MonoBehaviour
 	[SerializeField] float LaunchSpeed = 5;
 	[SerializeField] float PullSpeed = 5;
 	[SerializeField] float MaxCableLength = 10;
+	[SerializeField] string[] CollisionIgnoreTags;
 
 	bool mIsLatched = false;
 	bool mReel = false;
@@ -102,6 +103,9 @@ public class HookShot : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
+		if (other.tag == "NoGrapple")
+			return;
+
 		if (!IsReeling && other != mPlayerCapsule)
 		{
 			Physics.IgnoreCollision(mSphere, mPlayerCapsule, false);
