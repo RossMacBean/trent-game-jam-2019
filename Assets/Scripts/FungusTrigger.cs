@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class FungusTrigger : MonoBehaviour, IInteractive
 {
 	[SerializeField] bool TriggerOnInteract = false;
