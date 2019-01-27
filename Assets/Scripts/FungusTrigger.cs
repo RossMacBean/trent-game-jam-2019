@@ -92,7 +92,6 @@ public class FungusTrigger : MonoBehaviour, IInteractive
 		mAudioSource = FindObjectOfType<AudioSource>();
 		if (mAudioSource != null)
 		{
-			Debug.Log("BANG");
 			mAudioSource.PlayOneShot(mTriggerSound);
 		}
 
